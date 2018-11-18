@@ -16,12 +16,14 @@ export class DataViewContainer extends React.Component {
         return (
             <div className="data-view">
                 <ShotChart playerId={this.props.playerId} minCount={this.state.minCount}/>
-
-
-                <Row>
-                    <Col span={2} offset = {3}>shots:</Col>
-                    <Col span={16} > <CountSlider onMinCountChange={this.onMinCountChange}/></Col>
-                </Row>
+                <div className="filters">
+                    <Row className="filter-row">
+                        <Col span={2} offset={3} className="filter-label">Shots:</Col>
+                        <Col span={16}>
+                            <CountSlider className="filter-control" onMinCountChange={this.onMinCountChange}/>
+                        </Col>
+                    </Row>
+                </div>
             </div>
         );
     }
